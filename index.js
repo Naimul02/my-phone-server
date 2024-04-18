@@ -1,5 +1,8 @@
 const express = require("express"); //etar maddhome tumi kichu ekta import kortecho'
 
+
+const cors = require("cors");
+
 // etar maddhome phones.json file er moddhe joto data royeche segulo ana hoye thake.
 const phones = require("./phones.json");
 
@@ -7,6 +10,8 @@ const app = express(); //je express ta asteche eta diye tumi ekta app banaba.
 
 const port = 3000; //port declare kora mane koto number port diye tumi server ta k calaba se port declare kora.
 
+// eta k middleware bola hoy
+app.use(cors());
 //eta holo data gulo paowar ekta system
 app.get("/", (req, res) => {
   res.send("my phone server comming sooon tun mun!");
